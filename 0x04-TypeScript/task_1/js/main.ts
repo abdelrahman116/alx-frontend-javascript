@@ -69,7 +69,7 @@ function printTeacher({ firstName, lastName }: Teacher): string {
 
 // 4-Class
 
-const StudentClass = class {
+class StudentClass {
   firstName: string;
   lastName: string;
   workOnHomework(): string {
@@ -83,7 +83,7 @@ const StudentClass = class {
     this.firstName = firstName;
     this.lastName = lastName;
   }
-};
+}
 interface StudentClassInterface {
   firstName: string;
   lastName: string;
