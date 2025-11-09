@@ -55,6 +55,6 @@ document.body.appendChild(table);
 console.log("TypeScript is very working!");
 
 // 2-extend
-interface Directors extends Teacher {
+interface Director extends Teacher {
   numberOfReports: number;
 }
