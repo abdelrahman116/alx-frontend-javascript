@@ -53,3 +53,13 @@ studentsList.forEach((student) => {
 
 document.body.appendChild(table);
 console.log("TypeScript is very working!");
+
+// 2-extend
+export interface Directors {
+  readonly firstName: string;
+  readonly lastName: string;
+  fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
+  location: string;
+  numberOfReports: number;
+}
