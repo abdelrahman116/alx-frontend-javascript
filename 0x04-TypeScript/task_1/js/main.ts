@@ -62,5 +62,5 @@ interface Director extends Teacher {
 // 3-Printing
 
 function printTeacher({ firstName, lastName }) {
-  return `${firstName}.${lastName}`;
+  return `${firstName}. ${lastName}`;
 }
