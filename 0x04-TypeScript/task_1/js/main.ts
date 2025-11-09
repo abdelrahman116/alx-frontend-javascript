@@ -61,6 +61,6 @@ interface Director extends Teacher {
 
 // 3-Printing
 
-const printTeacherFunction = (firstName: string, lastName: string) => {
+function printTeacher(firstName: string, lastName: string) {
   return `${firstName[0]}.${lastName}`;
-};
+}
