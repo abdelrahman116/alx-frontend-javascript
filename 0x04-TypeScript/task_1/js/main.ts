@@ -60,7 +60,9 @@ interface Director extends Teacher {
 }
 
 // 3-Printing
-
-function printTeacher({ firstName, lastName }) {
+interface printTeacherFunction {
+  (teacher: { firstName: string; lastName: string }): string;
+}
+function printTeacher({ firstName, lastName }: Teacher): string {
   return `${firstName}. ${lastName}`;
 }
