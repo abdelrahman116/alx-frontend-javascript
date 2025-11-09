@@ -58,3 +58,9 @@ console.log("TypeScript is very working!");
 interface Director extends Teacher {
   numberOfReports: number;
 }
+
+// 3-Printing
+
+const printTeacherFunction = (firstName: string, lastName: string) => {
+  return `${firstName[0]}.${lastName}`;
+};
