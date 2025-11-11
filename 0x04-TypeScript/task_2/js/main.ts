@@ -51,10 +51,11 @@ function executeWork(employee: Director | Teacher): string {
 }
 
 const Subjects: string[] = ["Math", "History"];
+
 function teachClass(todayClass: string): string {
-  if (todayClass === "Math") {
+  if (todayClass:Subjects === "Math") {
     return "Teaching Math";
-  } else if (todayClass === "History") {
+  } else if (todayClass:Subjects === "History") {
     return "Teaching History";
   } else {
     return "No class today";
