@@ -1,92 +1,39 @@
-interface Student {
-  firstName: string;
-  lastName: string;
-  age: number;
-  location: string;
+interface DirectorInterface {
+  workFromHome(): string;
+  getCoffeeBreak(): string;
+  workDirectorTasks(): string;
 }
-
-const Student_1: Student = {
-  firstName: "Mark",
-  lastName: "luther",
-  age: 25,
-  location: "Egypt",
-};
-
-const Student_2: Student = {
-  firstName: "Sam",
-  lastName: "King",
-  age: 29,
-  location: "UEA",
-};
-
-// task_1/js/main.ts
-
-export interface Teacher {
-  readonly firstName: string;
-  readonly lastName: string;
-  fullTimeEmployee: boolean;
-  yearsOfExperience?: number;
-  location: string;
-  [key: string]: any; // allows additional properties like "contract"
+interface TeacherInterface {
+  workFromHome(): string;
+  getCoffeeBreak(): string;
+  workTeacherTasks(): string;
 }
-
-const teacher3: Teacher = {
-  firstName: "John",
-  fullTimeEmployee: false,
-  lastName: "Doe",
-  location: "London",
-  contract: false,
-};
-
-console.log(teacher3);
-
-const studentsList: Student[] = [Student_1, Student_2];
-
-const table = document.createElement("table");
-const header = table.insertRow();
-header.innerHTML = "<th>First Name</th>  <th>Last Name</th>  <th>Location</th>";
-
-studentsList.forEach((student) => {
-  const row = table.insertRow();
-  row.innerHTML = `<td>${student.firstName}</td><td>${student.lastName}</td><td>${student.location}</td>`;
-});
-
-document.body.appendChild(table);
-console.log("TypeScript is very working!");
-
-// 2-extend
-interface Director extends Teacher {
-  numberOfReports: number;
-}
-
-// 3-Printing
-interface printTeacherFunction {
-  (teacher: { firstName: string; lastName: string }): string;
-}
-function printTeacher({ firstName, lastName }: Teacher): string {
-  return `${firstName}. ${lastName}`;
-}
-
-// 4-Class
-
-class StudentClass {
-  firstName: string;
-  lastName: string;
-  workOnHomework(): string {
-    return "Currently working";
+class Director implements DirectorInterface {
+  workFromHome(): string {
+    return "Working from home";
   }
-  displayName(): string {
-    return this.firstName;
+  getCoffeeBreak(): string {
+    return "Getting a coffee break";
   }
-
-  constructor(firstName: string, lastName: string) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+  workDirectorTasks(): string {
+    return "Getting to director tasks";
   }
 }
-interface StudentClassInterface {
-  firstName: string;
-  lastName: string;
-  workOnHomework(): string;
-  displayName(): string;
+class Teacher implements TeacherInterface {
+  workFromHome(): string {
+    return "Cannot work from home";
+  }
+  getCoffeeBreak(): string {
+    return "Cannot have a break";
+  }
+  workTeacherTasks(): string {
+    return "Getting to work";
+  }
+}
+function createEmployee(salary: number | string): Director | Teacher {
+  if (typeof salary === "number" && salary < 500) {
+    return new Teacher();
+  } else {
+    return new Director();
+  }
 }
