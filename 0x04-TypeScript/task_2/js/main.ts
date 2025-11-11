@@ -49,11 +49,10 @@ function executeWork(employee: Director | Teacher): string {
     return employee.workTeacherTasks();
   }
 }
-const Subjects = ["Math", "History"] as const;
-type Subjects = (typeof Subjects)[number];
+const Subjects = ["Math", "History"];
 
-function teachClass(todayClass: Subjects): string {
-  if (todayClass === "Math") return "Teaching Math";
-  if (todayClass === "History") return "Teaching History";
+function teachClass(todayClass: string): string {
+  if (todayClass.subjects === "Math") return "Teaching Math";
+  if (todayClass.Subjects === "History") return "Teaching History";
   return "No class today";
 }
