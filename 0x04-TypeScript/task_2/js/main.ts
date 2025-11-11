@@ -52,7 +52,7 @@ function executeWork(employee: Director | Teacher): string {
 const Subjects = ["Math", "History"];
 
 function teachClass(todayClass: string): string {
-  if (todayClass.Subjects === "Math") return "Teaching Math";
-  if (todayClass.Subjects === "History") return "Teaching History";
+  if (todayClass:Subjects === "Math") return "Teaching Math";
+  if (todayClass:Subjects === "History") return "Teaching History";
   return "No class today";
 }
