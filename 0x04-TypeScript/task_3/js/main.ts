@@ -13,14 +13,14 @@ class RowClass {
   }
 }
 
-let row: RowElement = {
+const row: RowElement = {
   firstName: "Guillaume",
   lastName: "Salva",
 };
 
 const newRowID: RowID = CRUD.insertRow(row);
 
-const updateRowID: RowElement = { ...row, age: 23 };
+const updateRow: RowElement = { ...row, age: 23 };
 
-CRUD.deleteRow(newRowID, updateRowID);
-CRUD.updateRow(newRowID);
+CRUD.updateRow(newRowID, updateRow);
+CRUD.deleteRow(newRowID);
