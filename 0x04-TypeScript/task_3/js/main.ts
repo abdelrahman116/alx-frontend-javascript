@@ -1,7 +1,7 @@
-/// <reference path="./js/crud.d.ts" />
+/// <reference path="./crud.d.ts" />
 
 import { RowID, RowElement } from "./interface";
-import * as CRUD from "./js/crud";
+import * as CRUD from "./crud";
 
 class RowClass {
   firstName: string;
